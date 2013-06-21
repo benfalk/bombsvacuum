@@ -11,6 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20130621221234) do
+
+  create_table "fields", force: true do |t|
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "mines"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.integer  "field_id"
+    t.integer  "x_coordinate"
+    t.integer  "y_coordinate"
+    t.string   "state"
+    t.boolean  "has_mine"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
