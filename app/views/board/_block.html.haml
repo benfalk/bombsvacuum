@@ -1,1 +1,9 @@
 .block{id:"id_#{block}"}
+  -if block.covered?
+    = link_to '?', { action: :update,
+                     controller: :locations,
+                     id: block.id,
+                     field_id: block.field.id,
+                     location: { state: 'uncovered' } }, method: :put, style: 'color:#FFF'
+  -else
+    = block.mines
