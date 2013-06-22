@@ -11,9 +11,27 @@ class Field < ActiveRecord::Base
             :mines,
             :numericality => { :integer => true, :greater_than_or_equal_to => 1 }
 
+  validates :state,
+            :inclusion => { in: %w( ready playing won lost ) },
+            :allow_blank => true
+
   has_many :locations
 
   before_create :build_locations
+
+  #
+  # determines the size of the field, which is it's height * width
+  #
+  def size
+    height * width
+  end
+
+  #
+  # determines if the game is over or not based on it's state
+  #
+  def over?
+    state == 'won' || state == 'lost'
+  end
 
   private
 
@@ -28,12 +46,14 @@ class Field < ActiveRecord::Base
       width.times do |w|
         locations.build( x_coordinate: h,
                          y_coordinate: w,
-                         state: :covered,
+                         state: 'covered',
                          has_mine: false )
       end
     end
 
     locations.sample(mines).each { |loc| loc.has_mine = true }
+
+    self.state = 'ready'
 
   end
 
