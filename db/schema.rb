@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130622151357) do
+ActiveRecord::Schema.define(version: 20130622172242) do
 
   create_table "fields", force: true do |t|
     t.integer  "width"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20130622151357) do
     t.boolean  "has_mine"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "mines"
   end
 
 end

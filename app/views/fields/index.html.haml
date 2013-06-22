@@ -1,0 +1,7 @@
+%h2 Games
+
+%ul
+  -@fields.each do |field|
+    %li= link_to "#{field.size} | #{field.state}", field
+
+=link_to 'Create', new_field_path

@@ -5,8 +5,8 @@
     .wood
       .play_area
         .grid
-          - @blocks = Array(1..900)
-          = render :partial => 'block', :collection => @blocks, :as => :block
+          - @blocks = @field.locations
+          = render :partial => 'board/block', :collection => @blocks, :as => :block
   .score-board
     .header
       .name
@@ -17,7 +17,7 @@
         Plays
     .people
       - @people = %w(Brad Ben Mike)
-      = render :partial => 'person', :collection => @people, :as => :person
+      = render :partial => 'board/person', :collection => @people, :as => :person
 
   %footer
     This is a footer and this is where you put all the footer stuff.

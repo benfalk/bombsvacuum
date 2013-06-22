@@ -9,6 +9,12 @@ class Location < ActiveRecord::Base
 
   validates_presence_of :field
 
+  validates :state, :inclusion => { in: %w( covered uncovered flagged ) }
+
+  validate :game_over?
+
+  validate :prevent_change_from_uncovered
+
   scope :having_mines, -> { where( has_mine:true ) }
 
   #
@@ -16,14 +22,38 @@ class Location < ActiveRecord::Base
   # the given coordinate, this scope should normally be called within
   # the scope of a field's locations
   #
-  scope :by_coordinate, -> (x=0,y=0){ where( x_coordinate: x,
+  scope :fetch_coordinate, -> (x=0,y=0){ where( x_coordinate: x,
                                              y_coordinate: y ).first }
+
+  after_save do
+    if uncovered? && has_mine?
+      field.update!(state: 'lost')
+    elsif uncovered?
+      field.update!(state: 'playing')
+    end
+  end
 
   #
   # determines if there are any mines in the proximity
   #
   def surrounding_mines?
     mine_count > 0
+  end
+
+  def uncovered?
+    state == 'uncovered'
+  end
+
+  def changed_from_uncovered?
+    state_changed? && state_was == 'uncovered'
+  end
+
+  def covered?
+    state == 'covered'
+  end
+
+  def flagged?
+    state == 'flagged'
   end
 
   #
@@ -44,12 +74,24 @@ class Location < ActiveRecord::Base
 
   private
 
-  def x_proximity #:nodoc:
-    (x_coordinate-1)..(x_coordinate+1)
-  end
+    def prevent_change_from_uncovered
+      if changed_from_uncovered?
+        errors.add(:state, 'May not change from state of uncovered')
+      end
+    end
 
-  def y_proximity #:nodoc:
-    (y_coordinate-1)..(y_coordinate+1)
-  end
+    def game_over? #:nodoc:
+      if field.over?
+        errors.add(:general, "Board is already #{field.state}")
+      end
+    end
+
+    def x_proximity #:nodoc:
+      (x_coordinate-1)..(x_coordinate+1)
+    end
+
+    def y_proximity #:nodoc:
+      (y_coordinate-1)..(y_coordinate+1)
+    end
 
 end
