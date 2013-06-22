@@ -1,0 +1,157 @@
+.centerWrap
+{
+  width: 793px;
+  margin: 30px auto;
+  text-align: left;
+  position: relative;
+}
+.title
+{
+  padding: 0px 0px 30px 0px;
+}
+.board
+{
+  .wood
+  {
+    background: url('wood.jpg') no-repeat;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+	-moz-box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+	box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+    overflow: hidden;
+    .play_area
+    {
+      margin: 20px;
+      background-color: #383733;
+      background-image: -webkit-linear-gradient(18deg, #383733 40%, #655e48);
+      background-image: -moz-linear-gradient(18deg, #383733 40%, #655e48);
+      background-image: -o-linear-gradient(18deg, #383733 40%, #655e48);
+      background-image: -ms-linear-gradient(18deg, #383733 40%, #655e48);
+      background-image: linear-gradient(18deg, #383733 40%, #655e48);
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-shadow: inset -1px 2px 7px rgba(52, 26, 2, 0.74);
+      -moz-box-shadow: inset -1px 2px 7px rgba(52, 26, 2, 0.74);
+      box-shadow: inset -1px 2px 7px rgba(52, 26, 2, 0.74);
+      .grid
+      {
+        width: 754px;
+        overflow: hidden;
+      }
+    }
+  }
+
+}
+.score-board
+{
+  margin-top: 30px;
+  overflow: hidden;
+  -webkit-border-radius: 3px/6px;
+  -moz-border-radius: 3px/6px;
+  border-radius: 3px/6px;
+  background-color: #b8a792;
+  font-family: Pacifico;
+  .header
+  {
+    overflow: hidden;
+    font-size: 24px;
+    color: #3e3c36;
+    padding: 0px 0px 5px 5px;
+    background-color: #ebe7e4;
+    -webkit-box-shadow: 0 2px 3px rgba(109,99,67,.75);
+    -moz-box-shadow: 0 2px 3px rgba(109,99,67,.75);
+    box-shadow: 0 2px 3px rgba(109,99,67,.75);
+    background-image: -webkit-linear-gradient(-94deg, #e7dab6, #ab9b88);
+    background-image: -moz-linear-gradient(-94deg, #e7dab6, #ab9b88);
+    background-image: -o-linear-gradient(-94deg, #e7dab6, #ab9b88);
+    background-image: -ms-linear-gradient(-94deg, #e7dab6, #ab9b88);
+    background-image: linear-gradient(-94deg, #e7dab6, #ab9b88);
+    .name
+    {
+      text-align: right;
+      float: left;
+      width: 10%;
+    }
+    .time
+    {
+      text-align: right;
+      float: left;
+      width: 58.5%;
+      color: #514f49;
+    }
+    .plays
+    {
+      text-align: right;
+      float: left;
+      width: 29%;
+      color: #605d4b;
+    }
+  }
+  a.person
+  {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-size: 20px;
+    color: #783c26;
+    overflow: hidden;
+    border-top: 1px solid #c5b7a7;
+    border-bottom: 1px solid #ac9273;
+    padding: 0px 3px 5px 3px;
+    .rank
+    {
+      text-align: center;
+      float: left;
+      width: 5%;
+    }
+    .name
+    {
+      text-align: left;
+      float: left;
+      width: 30%;
+    }
+    .time
+    {
+      text-align: right;
+      float: left;
+      width: 30%;
+    }
+    .plays
+    {
+      text-align: right;
+      float: left;
+      width: 30%;
+    }
+
+  }
+  .person:first-child
+  {
+    border-top: none;
+  }
+  .person:hover
+  {
+    background-color: #b19d86;
+  }
+
+}
+.block
+{
+  width: 24px;
+  height: 24px;
+  border-bottom: 1px solid #747165;
+  border-left: 1px solid #747165;
+  cursor: pointer;
+  float: left;
+}
+.block:hover
+{
+  background-color:  rgba(0,0,0,.3);
+}
+.block:nth-child(5n)
+{
+  border-left: 1px solid #8d8a7e;
+}
