@@ -43,7 +43,26 @@
       }
     }
   }
-
+}
+.tools
+{
+  position: absolute;
+  top: 153px;
+  right: -113px;
+  width: 72px;
+  height: 214px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ebe7e4;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.75);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.75);
+  box-shadow: 0 1px 2px rgba(0,0,0,.75);
+  background-image: -webkit-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -moz-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -o-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -ms-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: linear-gradient(-122deg, #e7dab6, #ab9b88);
 }
 .score-board
 {
@@ -126,7 +145,6 @@
       float: left;
       width: 30%;
     }
-
   }
   .person:first-child
   {
@@ -136,7 +154,6 @@
   {
     background-color: #b19d86;
   }
-
 }
 .block
 {
