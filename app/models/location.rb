@@ -33,6 +33,10 @@ class Location < ActiveRecord::Base
     end
   end
 
+  before_save do
+    self.mines = mine_count if uncovered?
+  end
+
   #
   # determines if there are any mines in the proximity
   #
