@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130621221234) do
+ActiveRecord::Schema.define(version: 20130622151357) do
 
   create_table "fields", force: true do |t|
     t.integer  "width"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130621221234) do
     t.integer  "mines"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state"
   end
 
   create_table "locations", force: true do |t|

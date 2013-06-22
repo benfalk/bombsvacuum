@@ -13,7 +13,7 @@ class Field < ActiveRecord::Base
 
   has_many :locations
 
-  after_create :create_field
+  before_create :build_locations
 
   private
 
@@ -22,17 +22,18 @@ class Field < ActiveRecord::Base
   # a location for each coordinate that should exists in the field and then
   # randomly assigns the number of mines of locations to the field
   #
-  def create_field
+  def build_locations
 
     height.times do |h|
       width.times do |w|
-        locations.build( x_coordinate: h, y_coordinate: w, state: :covered ).save!
+        locations.build( x_coordinate: h,
+                         y_coordinate: w,
+                         state: :covered,
+                         has_mine: false )
       end
     end
 
-    locations.pluck(:id).sample(mines).each do |loc_id|
-      locations.find_by(id: loc_id).update(has_mine: true)
-    end
+    locations.sample(mines).each { |loc| loc.has_mine = true }
 
   end
 

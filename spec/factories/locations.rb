@@ -5,6 +5,6 @@ FactoryGirl.define do
     field_id 1
     x_cordinate 1
     y_cordinate 1
-    state "MyString"
+    state 'covered'
   end
 end
