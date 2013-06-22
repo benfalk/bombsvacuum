@@ -1,0 +1,23 @@
+.centerWrap
+  .title
+    = image_tag 'name.png', alt: 'bombsvacuum'
+  .board
+    .wood
+      .play_area
+        .grid
+          - @blocks = Array(1..900)
+          = render :partial => 'block', :collection => @blocks, :as => :block
+  .score-board
+    .header
+      .name
+        Name
+      .time
+        Best Time
+      .plays
+        Plays
+    .people
+      - @poople = %w(Brad Ben Mike)
+      = render :partial => 'person', :collection => @poople, :as => :person
+
+  %footer
+    This is a footer and this is where you put all the footer stuff.
