@@ -2,7 +2,7 @@
 {
   width: 793px;
   margin: 30px auto;
-  text-align: left;
+  text-align: center;
   position: relative;
 }
 .title
@@ -76,11 +76,17 @@
     display: block;
     padding: 10px 0px;
     text-align: center;
+    background: url('big-flag-empty.png') no-repeat 24px 10px;
     border-top: 1px solid #d7c9b9;
+    height: 35px;
   }
   .flag:hover
   {
     background-color: rgba(0,0,0,.1);
+  }
+  a.flag-filled
+  {
+    background: url('big-flag.png') no-repeat 24px 10px;
   }
 }
 .score-board
@@ -117,14 +123,21 @@
     {
       text-align: right;
       float: left;
-      width: 58.5%;
+      width: 40%;
+      color: #514f49;
+    }
+    .wins
+    {
+      text-align: right;
+      float: left;
+      width: 25%;
       color: #514f49;
     }
     .plays
     {
       text-align: right;
       float: left;
-      width: 29%;
+      width: 22%;
       color: #605d4b;
     }
   }
@@ -150,19 +163,25 @@
     {
       text-align: left;
       float: left;
-      width: 30%;
+      width: 20%;
     }
     .time
     {
       text-align: right;
       float: left;
-      width: 30%;
+      width: 20%;
+    }
+    .wins
+    {
+      text-align: right;
+      float: left;
+      width: 28%;
     }
     .plays
     {
       text-align: right;
       float: left;
-      width: 30%;
+      width: 22%;
     }
   }
   .person:first-child
@@ -185,7 +204,7 @@
   font-size: 18px;
   line-height: 16px;
   text-align: center;
-  font-family: Pacifico;
+  font-family: 'Pacifico', cursive;
   color: #b19d86;
 }
 .covered
@@ -199,4 +218,33 @@
 .block:nth-child(5n)
 {
   border-left: 1px solid #8d8a7e;
+}
+a.challenge
+{
+  display: block;
+  text-decoration: none;
+  margin: 50px auto 0px;
+  width: 300px;
+  padding: 10px 0px 13px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  background-color: #ebe7e4;
+  border-radius: 4px;
+  -webkit-box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+  -moz-box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+  box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+  background-image: -webkit-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -moz-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -o-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -ms-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: linear-gradient(-122deg, #e7dab6, #ab9b88);
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: #7a635b;
+}
+a.challenge:hover
+{
+  color: #503e32;
 }
