@@ -7,6 +7,13 @@
         .grid
           - @blocks = @field.locations
           = render :partial => 'board/block', :collection => @blocks, :as => :block
+  .tools
+    .time.timer
+
+    = link_to '#', class:'flag' do
+      = image_tag 'big-flag.png'
+
+
   .score-board
     .header
       .name

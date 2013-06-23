@@ -43,7 +43,45 @@
       }
     }
   }
-
+}
+.tools
+{
+  position: absolute;
+  top: 153px;
+  right: -103px;
+  width: 72px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  background-color: #ebe7e4;
+  border-radius: 4px;
+  -webkit-box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+  -moz-box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+  box-shadow: -1px 3px 5px rgba(0,0,0,.75);
+  background-image: -webkit-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -moz-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -o-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: -ms-linear-gradient(-122deg, #e7dab6, #ab9b88);
+  background-image: linear-gradient(-122deg, #e7dab6, #ab9b88);
+  .time
+  {
+    padding: 0px 0px 5px;
+    font-size: 20px;
+    text-align: center;
+    font-family: Pacifico;
+    color: #783c26;
+    border-bottom: 1px solid #b3a387;
+  }
+  a.flag
+  {
+    display: block;
+    padding: 10px 0px;
+    text-align: center;
+    border-top: 1px solid #d7c9b9;
+  }
+  .flag:hover
+  {
+    background-color: rgba(0,0,0,.1);
+  }
 }
 .score-board
 {
@@ -126,7 +164,6 @@
       float: left;
       width: 30%;
     }
-
   }
   .person:first-child
   {
@@ -136,20 +173,28 @@
   {
     background-color: #b19d86;
   }
-
 }
 .block
 {
+  display: block;
   width: 24px;
   height: 24px;
   border-bottom: 1px solid #747165;
   border-left: 1px solid #747165;
-  cursor: pointer;
   float: left;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+  font-family: Pacifico;
+  color: #b19d86;
 }
-.block:hover
+.covered
 {
-  background-color:  rgba(0,0,0,.3);
+  background-color: rgba(0,0,0,.14);
+}
+.covered:hover
+{
+  background-color:  rgba(0,0,0,.4);
 }
 .block:nth-child(5n)
 {
