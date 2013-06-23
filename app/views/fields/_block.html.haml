@@ -2,8 +2,8 @@
   = link_to '', { action: :update,
                    controller: :locations,
                    id: block.id,
-                   field_id: block.field.id,
+                   field_id: block.field_id,
                    location: { state: 'uncovered' } }, method: :put, class:'block covered'
 -else
   .block
-    = block.mines
+    = if block.has_mine?; 'B'; else block.mines > 0 ? block.mines : ''; end
