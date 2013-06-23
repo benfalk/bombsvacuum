@@ -4,7 +4,10 @@ class LocationsController < ApplicationController
     @location = Location.includes(:field).find(params[:id])
     @location.update(location_params)
     @location.chain_uncover! unless @location.surrounding_mines?
-    redirect_to @location.field
+    respond_to do |format|
+      format.html { redirect_to @location.field }
+      format.js
+    end
   end
 
   private

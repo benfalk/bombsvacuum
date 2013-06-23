@@ -33,6 +33,4 @@ class FieldsController < ApplicationController
     params.require(:field).permit(:height,:width,:mines)
   end
 
-
-
 end

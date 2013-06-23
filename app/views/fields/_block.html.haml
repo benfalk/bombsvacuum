@@ -1,9 +1,14 @@
 -if block.covered?
-  = link_to '', { action: :update,
-                   controller: :locations,
-                   id: block.id,
-                   field_id: block.field_id,
-                   location: { state: 'uncovered' } }, method: :put, class:'block covered'
+  .block.field{'data-method' => :put, 'data-action' => :update, 'data-controller' => :locations, 'data-id' => block.id, 'data-field_id' => block.field_id, class:'covered'}
+
 -else
   .block
-    = if block.has_mine?; 'B'; else block.mines > 0 ? block.mines : ''; end
+    - if block.state == 'flagged'
+      F
+    - else
+      - if block.has_mine?
+        B
+      - else
+        -if block.mines > 0
+          = block.mines
+          

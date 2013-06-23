@@ -71,20 +71,20 @@
     color: #783c26;
     border-bottom: 1px solid #b3a387;
   }
-  a.flag
+  .flag
   {
-    display: block;
     padding: 10px 0px;
     text-align: center;
     background: url('big-flag-empty.png') no-repeat 24px 10px;
     border-top: 1px solid #d7c9b9;
     height: 35px;
+    cursor: pointer;
   }
   .flag:hover
   {
     background-color: rgba(0,0,0,.1);
   }
-  a.flag-filled
+  .flag-filled
   {
     background: url('big-flag.png') no-repeat 24px 10px;
   }
