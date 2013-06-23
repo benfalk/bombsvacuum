@@ -20,9 +20,9 @@ setInterval(function()
     $('.timer').text(currentTimeString);
 }, 1000);
 
+var marker = 'uncovered';
 function reset()
 {
-    var marker = 'uncovered';
     $('.flag').click(function()
     {
         if (marker == 'uncovered')
