@@ -20,20 +20,12 @@ setInterval(function()
     $('.timer').text(currentTimeString);
 }, 1000);
 
+// MARKER STUFF
 var marker = 'uncovered';
+
+// FIELDS AJAX STUFF
 function reset()
 {
-    $('.flag').click(function()
-    {
-        if (marker == 'uncovered')
-        {
-            $(this).addClass('flag-filled');
-            marker = 'flagged';
-        }else{
-            $(this).removeClass('flag-filled');
-            marker = 'uncovered';
-        }
-    });
     $('.field').click(function()
     {
         $.ajax({
@@ -59,5 +51,20 @@ function reset()
 }
 $(function()
 {
+    
+    // MARKER STUFF CONTINUED
+
+    $('#flag').click(function()
+    {
+        if (marker == 'uncovered')
+        {
+            $(this).addClass('flag-filled');
+            marker = 'flagged';
+        }else{
+            $(this).removeClass('flag-filled');
+            marker = 'uncovered';
+        }
+    });
+
     reset();
 });
