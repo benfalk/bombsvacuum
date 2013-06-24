@@ -3,6 +3,7 @@ function pretty_time_string(num)
     return ( num < 10 ? "0" : "" ) + num;
 }
 
+var boom = false;
 var start = new Date;    
 
 setInterval(function()
@@ -20,20 +21,12 @@ setInterval(function()
     $('.timer').text(currentTimeString);
 }, 1000);
 
+// MARKER STUFF
+var marker = 'uncovered';
+
+// FIELDS AJAX STUFF
 function reset()
 {
-    var marker = 'uncovered';
-    $('.flag').click(function()
-    {
-        if (marker == 'uncovered')
-        {
-            $(this).addClass('flag-filled');
-            marker = 'flagged';
-        }else{
-            $(this).removeClass('flag-filled');
-            marker = 'uncovered';
-        }
-    });
     $('.field').click(function()
     {
         $.ajax({
@@ -59,5 +52,17 @@ function reset()
 }
 $(function()
 {
+    // MARKER STUFF CONTINUED
+    $('#flag').click(function()
+    {
+        if (marker == 'uncovered')
+        {
+            $(this).addClass('flag-filled');
+            marker = 'flagged';
+        }else{
+            $(this).removeClass('flag-filled');
+            marker = 'uncovered';
+        }
+    });
     reset();
 });

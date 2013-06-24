@@ -8,6 +8,37 @@
   %body
     /[if lt IE 7]
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    = yield
+
+    .centerWrap
+      .title
+        = image_tag 'name.png', alt: 'bombsvacuum'
+
+      = yield
+
+      .score-board
+        .header
+          .name
+            Name
+          .time
+            Best Time
+          .wins
+            Wins
+          .plays
+            Plays
+        .people
+          - @people = %w(Brad Ben Mike)
+          = render :partial => 'person', :collection => @people, :as => :person
+
+      = link_to 'challenge a friend?', '#', 'data-modal-id' => 'challenge', class:'challenge'
+
+    #challenge.modal
+      %h2 Challenge a friend!
+      %p Something about challenging your friends.
+      %a.close-modal x
+
+    #boom.modal
+      %h2 BOOM!
+      %a.close-modal x
+
     %footer
       This is a footer and this is where you put all the footer stuff.
