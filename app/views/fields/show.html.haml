@@ -1,31 +1,10 @@
-.centerWrap
-  .title
-    = image_tag 'name.png', alt: 'bombsvacuum'
-
-  .board
-    .wood
-      .play_area
-        #grid.grid
-          - @blocks = @field.locations
-          = render :partial => 'block', :collection => @blocks, :as => :block
-
-  .tools
-    .time.timer
-      00: 00
-    .flag
-
-  .score-board
-    .header
-      .name
-        Name
-      .time
-        Best Time
-      .wins
-        Wins
-      .plays
-        Plays
-    .people
-      - @people = %w(Brad Ben Mike)
-      = render :partial => 'person', :collection => @people, :as => :person
-
-  = link_to 'challenge a friend?', '#', class:'challenge'
+.board
+  .wood
+    .play_area
+      #grid.grid
+        - @blocks = @field.locations
+        = render :partial => 'block', :collection => @blocks, :as => :block
+.tools
+  .time.timer
+    00: 00
+  #flag.flag
