@@ -3,6 +3,7 @@ function pretty_time_string(num)
     return ( num < 10 ? "0" : "" ) + num;
 }
 
+var boom = false;
 var start = new Date;    
 
 setInterval(function()
@@ -51,9 +52,7 @@ function reset()
 }
 $(function()
 {
-    
     // MARKER STUFF CONTINUED
-
     $('#flag').click(function()
     {
         if (marker == 'uncovered')
@@ -65,6 +64,5 @@ $(function()
             marker = 'uncovered';
         }
     });
-
     reset();
 });
