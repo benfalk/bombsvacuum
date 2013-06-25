@@ -20,6 +20,20 @@ body
   text-align: center;
   background-color: #292823;
 }
+
+.centerWrap
+{
+  width: 760px;
+  margin: 30px auto;
+  text-align: center;
+  position: relative;
+}
+
+.title
+{
+  padding: 0px 0px 30px 0px;
+}
+
 footer
 {
     font-family: helvetica;
