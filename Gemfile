@@ -18,8 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use haml for sexy markup
 gem 'haml-rails', '0.3.5'
 
-# Use zurb-foundation for a layout frame work
-gem 'zurb-foundation', '~> 2.2'
+gem 'zurb-foundation', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -41,10 +40,6 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.0'
-end
-
-group :assets do
-
 end
 
 # Use ActiveModel has_secure_password

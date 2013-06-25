@@ -65,7 +65,7 @@
   background-image: linear-gradient(-122deg, #e7dab6, #ab9b88);
   .time
   {
-    padding: 0px 0px 5px;
+    padding: 7px 0px 10px;
     font-size: 20px;
     text-align: center;
     font-family: Pacifico;
@@ -74,11 +74,10 @@
   }
   .flag
   {
-    padding: 10px 0px;
     text-align: center;
     background: url('big-flag-empty.png') no-repeat 24px 10px;
     border-top: 1px solid #d7c9b9;
-    height: 35px;
+    height: 55px;
     cursor: pointer;
   }
   .flag:hover
@@ -104,7 +103,7 @@
     overflow: hidden;
     font-size: 24px;
     color: #3e3c36;
-    padding: 0px 0px 5px 5px;
+    padding: 13px 0px 15px 5px;
     background-color: #ebe7e4;
     -webkit-box-shadow: 0 2px 3px rgba(109,99,67,.75);
     -moz-box-shadow: 0 2px 3px rgba(109,99,67,.75);
@@ -153,7 +152,7 @@
     overflow: hidden;
     border-top: 1px solid #c5b7a7;
     border-bottom: 1px solid #ac9273;
-    padding: 0px 3px 5px 3px;
+    padding: 10px 3px 11px 3px;
     .rank
     {
       text-align: center;
@@ -207,6 +206,7 @@
   text-align: center;
   font-family: 'Pacifico', cursive;
   color: #b19d86;
+  cursor: pointer;
 }
 .covered
 {
