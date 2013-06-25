@@ -15,7 +15,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# Use haml for sexy markup
 gem 'haml-rails', '0.3.5'
+
+# Use zurb-foundation for a layout frame work
+gem 'zurb-foundation', '~> 2.2'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -40,7 +44,7 @@ group :development, :test do
 end
 
 group :assets do
-  gem 'zurb-foundation', '~> 2.2'
+
 end
 
 # Use ActiveModel has_secure_password
