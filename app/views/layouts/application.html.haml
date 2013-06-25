@@ -43,18 +43,19 @@
         - @people = %w(Brad Ben Mike)
         = render :partial => 'person', :collection => @people, :as => :person
 
-    = link_to 'challenge a friend?', '#', 'data-modal-id' => 'challenge', class:'challenge'
-
-  #challenge.modal
-    %h2 Challenge a friend!
-    %p Something about challenging your friends.
-    %a.close-modal x
+    = link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
 
   #boom.modal
     %h2 BOOM!
     %a.close-modal x
 
-  %footer
-    This is a footer and this is where you put all the footer stuff.
+#challenge.reveal-modal.small
+  %h2 Challenge a friend!
+  %p.lead Your couch.  It is mine.
+  %p Something about challenging your friends.
+  %a.close-reveal-modal ×
+
+%footer
+  This is a footer and this is where you put all the footer stuff.
 
   = javascript_include_tag "application"
