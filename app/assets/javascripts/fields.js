@@ -4,7 +4,7 @@ function pretty_time_string(num)
 }
 
 var boom = false;
-var start = new Date;    
+var start = new Date;
 
 setInterval(function()
 {
@@ -18,7 +18,7 @@ setInterval(function()
     minutes = pretty_time_string(minutes);
     seconds = pretty_time_string(seconds);
     var currentTimeString = minutes + ": " + seconds;
-    $('.timer').text(currentTimeString);
+    $('#game-timer').text(currentTimeString);
 }, 1000);
 
 // MARKER STUFF
