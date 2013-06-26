@@ -36,25 +36,17 @@ class Location < ActiveRecord::Base
   end
 
   before_save do
-    self.mines = mine_count if uncovered?
+    self.mines = mine_count if uncovered? && mines.nil?
   end
 
   #
   # terribly long potentially, but uncovers all surrounding locations
   # and chains along on others that have no surrounding mines
   #
-  def chain_uncover!(excluding=nil)
-    excluding ||= []
-    excluding << id
-    uncovers = []
-    return if surrounding_mines?
-    locations_within_proximity.where.not(id: excluding).each do |loc|
-      loc.state = 'uncovered'
-      excluding << loc.id
-      loc.save
-      uncovers << loc if loc.mines = 0
-    end
-    uncovers.each { |c| c.chain_uncover!(excluding) }
+  def chain_uncover!
+    field.locations.
+        where(id: Field::Analyzer.new(field).uncover_strategy_from(self).map(&:id)).
+        update_all(state: :uncovered)
   end
 
   #

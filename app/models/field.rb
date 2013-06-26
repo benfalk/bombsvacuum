@@ -47,11 +47,17 @@ class Field < ActiveRecord::Base
         locations.build( x_coordinate: h,
                          y_coordinate: w,
                          state: 'covered',
-                         has_mine: false )
+                         has_mine: false,
+                         mines: 0         )
       end
     end
 
-    locations.sample(mines).each { |loc| loc.has_mine = true }
+    analyzer = Field::Analyzer.new self
+
+    locations.sample(mines).each do |loc|
+      loc.has_mine = true
+      analyzer.locations_around(loc).each { |area| area.mines += 1 }
+    end
 
     self.state = 'ready'
 
