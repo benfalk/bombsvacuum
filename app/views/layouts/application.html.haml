@@ -26,6 +26,8 @@
   .centerWrap
     .title
       = image_tag 'name.png', alt: 'bombsvacuum'
+      %span.notice= notice
+      %span.alert= alert
 
     = yield
 
