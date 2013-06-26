@@ -12,7 +12,8 @@ class FieldsController < ApplicationController
 
   # GET /fields/new
   def new
-    @field = Field.new
+    @field = Field.new height: 30, width: 30, mines: 150
+    redirect_to @field if @field.save
   end
 
   # POST /fields
