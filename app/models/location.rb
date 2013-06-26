@@ -44,7 +44,9 @@ class Location < ActiveRecord::Base
   # and chains along on others that have no surrounding mines
   #
   def chain_uncover!
-    Field::Analyzer.new(field).uncover_strategy_from(self).map(&:save!)
+    field.locations.
+        where(id: Field::Analyzer.new(field).uncover_strategy_from(self).map(&:id)).
+        update_all(state: :uncovered)
   end
 
   #
