@@ -31,21 +31,21 @@
 
     = yield
 
-    .score-board
-      .header
-        .name
-          Name
-        .time
-          Best Time
-        .wins
-          Wins
-        .plays
-          Plays
-      .people
-        - @people = %w(Brad Ben Mike)
-        = render :partial => 'person', :collection => @people, :as => :person
-
-    = link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
+    -#.score-board
+    -#  .header
+    -#    .name
+    -#      Name
+    -#    .time
+    -#      Best Time
+    -#    .wins
+    -#      Wins
+    -#    .plays
+    -#      Plays
+    -#  .people
+    -#    - @people = %w(Brad Ben Mike)
+    -#    = render :partial => 'person', :collection => @people, :as => :person
+    -#
+    -#= link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
 
   #boom.modal
     %h2 BOOM!
