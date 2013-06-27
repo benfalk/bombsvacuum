@@ -1,3 +1,31 @@
+:javascript
+  // Not sure why, but jquery isn't ready yet?
+  setTimeout(function(){$(function(){
+   console.log('starting SSE')
+   if(!!window.EventSource) {
+
+     var source = new EventSource('#{subscribe_field_locations_path(@field)}')
+
+     source.addEventListener('message', function(e) {
+       console.log(e.data);
+     }, false);
+
+     source.addEventListener('open', function(e) {
+       // Connection was opened.
+     }, false);
+
+     source.addEventListener('error', function(e) {
+       if (e.readyState == EventSource.CLOSED) {
+         // Connection was closed.
+       }
+     }, false);
+
+   }else{
+     console.log('SSE not available')
+   }
+  })},2000)
+
+
 .board
   .wood
     .play_area
