@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use haml for sexy markup
 gem 'haml-rails', '0.3.5'
 
+# Use for layout
 gem 'zurb-foundation', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -31,6 +32,15 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
+
+# Use for authorization and permissions
+gem 'devise', '3.0.0.rc'
+gem 'cancan'
+
+# Use for facebook authorization
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
