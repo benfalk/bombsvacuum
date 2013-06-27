@@ -40,7 +40,7 @@ gem 'cancan'
 # Use for facebook authorization
 gem 'omniauth'
 gem 'omniauth-facebook'
-
+gem 'activerecord-session_store'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
