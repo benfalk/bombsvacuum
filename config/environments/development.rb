@@ -26,4 +26,8 @@ BombsVacuum::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Putting this in for Unicorn logging to the terminal screen
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get('DEBUG')
 end
