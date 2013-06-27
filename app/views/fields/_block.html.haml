@@ -1,5 +1,5 @@
 -if block.covered?
-  .block.field{'data-method' => :put, 'data-action' => :update, 'data-controller' => :locations, 'data-id' => block.id, 'data-field_id' => block.field_id, class:'covered'}
+  .block.field{'data-method' => :put, 'data-action' => :update, 'data-controller' => :locations, 'data-id' => block.id, 'data-field_id' => block.field_id, class:'covered', id:"block_#{block.id}"}
 -else
   .block
     - if block.state == 'flagged'

@@ -1,3 +1,1 @@
-$('#grid').html("<%= j render :partial => 'fields/block', :collection => @location.field.locations, :as => :block %>");
-reset();
-if (boom){ modalPop('boom');}
+$('#block_<%= @location.id %>').replaceWith("<%= j render :partial => 'fields/block', :object => @location, :as => :block %>");
