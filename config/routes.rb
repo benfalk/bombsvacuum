@@ -1,5 +1,6 @@
 BombsVacuum::Application.routes.draw do
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :fields, :except => [:edit,:update,:patch] do
     resources :locations, :only => [:patch,:update,:show] do
@@ -8,9 +9,8 @@ BombsVacuum::Application.routes.draw do
   end
 
   # You can have the root of your site routed with "root"
-  root 'board#index'
+  root 'fields#index'
 
 
-  # root 'fields#index'
 
 end

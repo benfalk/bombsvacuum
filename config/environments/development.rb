@@ -30,4 +30,7 @@ BombsVacuum::Application.configure do
   # Putting this in for Unicorn logging to the terminal screen
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get('DEBUG')
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 end
