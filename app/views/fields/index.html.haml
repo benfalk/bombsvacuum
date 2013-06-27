@@ -2,11 +2,6 @@
 
   %p Welcome to bombvacuum!
 
-  %br
-    = link_to 'Sign In', new_user_session_path
-    or
-    = link_to 'Sign up', new_user_registration_path
-  %br
 
   - if user_signed_in?
     = link_to 'Sign Out', destroy_user_session_path, method: :delete

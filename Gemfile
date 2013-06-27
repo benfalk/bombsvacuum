@@ -33,9 +33,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
+# Use for authorization and permissions
 gem 'devise', '3.0.0.rc'
-
 gem 'cancan'
+
+# Use for facebook authorization
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -31,21 +31,7 @@
 
     = yield
 
-    -#.score-board
-    -#  .header
-    -#    .name
-    -#      Name
-    -#    .time
-    -#      Best Time
-    -#    .wins
-    -#      Wins
-    -#    .plays
-    -#      Plays
-    -#  .people
-    -#    - @people = %w(Brad Ben Mike)
-    -#    = render :partial => 'person', :collection => @people, :as => :person
-    -#
-    -#= link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
+
 
   #boom.modal
     %h2 BOOM!
@@ -59,5 +45,8 @@
 
 %footer
   This is a footer and this is where you put all the footer stuff.
+  = link_to 'Sign In', new_user_session_path
+  or
+  = link_to 'Sign up', new_user_registration_path
 
   = javascript_include_tag "application"

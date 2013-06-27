@@ -9,3 +9,18 @@
     00: 00
   #flag.flag
 
+.score-board
+  .header
+    .name
+      Name
+    .time
+      Best Time
+    .wins
+      Wins
+    .plays
+      Plays
+  .people
+    - @fakepeople = %w(Brad Ben Mike)
+    = render :partial => 'fields/person', :collection => @fakepeople, :as => :person
+
+= link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
