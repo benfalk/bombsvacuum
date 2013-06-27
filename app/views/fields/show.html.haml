@@ -7,7 +7,9 @@
      var source = new EventSource('#{subscribe_field_locations_path(@field)}')
 
      source.addEventListener('message', function(e) {
-       console.log(e.data);
+       datum = JSON.parse(e.data)
+       console.log( JSON.parse(e.data) );
+       $('#block_'+datum.id).replaceWith('<div class="block">'+ ( datum.mines>0 ? datum.mines : '' )+'</div>' )
      }, false);
 
      source.addEventListener('open', function(e) {

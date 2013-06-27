@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
     response.headers['Content-Type'] = 'text/event-stream'
     loop do
       field.locations.where('updated_at > ?', 1.second.ago).each do |loc|
-        response.stream.write "data: (#{loc.id}) field:#{loc.field_id} x:#{loc.x_coordinate} y:#{loc.y_coordinate} \n\n"
+        response.stream.write "data: #{loc.to_json}\n\n"
       end
       sleep 1
     end
