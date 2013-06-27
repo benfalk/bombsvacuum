@@ -1,0 +1,96 @@
+.reg-wrap
+{
+  font-family: 'Pacifico', cursive;
+  margin: 50px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #8e4645;
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  -moz-box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  padding: 20px;
+  text-align: center;
+  h2
+  {
+    font-family: 'Pacifico', cursive;
+	font-size: 72px;
+	color: #f4af6d;
+    font-weight: 400;
+    padding: 0;
+    margin: 0 0 40px 0;
+  }
+  .email-field
+  {
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 3px dotted #8e4645;
+  }
+  .password-field
+  {
+    -webkit-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+  }
+  .submit-button
+  {
+    margin-top: 20px;
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    float: right;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background: #f3ae6c;
+    padding: 0.5em 2em;
+    font-size: 1.5em;
+	color: #db6355;
+    border: none;
+
+  }
+  .links
+  {
+    font-family: helvetica;
+    margin-top: 20px;
+    text-align: left;
+    line-height: 1.4em;
+    font-size: .8em;
+    color: #f4af6d;
+    label
+    {
+      color: #f4af6d;
+    }
+  }
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  background: #ebeae2;
+  font-family: inherit;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #f4af6d;
+  display: block;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
