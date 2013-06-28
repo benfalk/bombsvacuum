@@ -33,7 +33,7 @@ class LocationsController < ApplicationController
 
   def last_update
     session[:field] ||= {}
-    session[:field][params[:field_id]] ||= field.updated_at + 2.seconds
+    session[:field][params[:field_id]] ||= field.locations.last.updated_at
   end
 
   def last_update=(update)
