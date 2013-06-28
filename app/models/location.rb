@@ -47,6 +47,7 @@ class Location < ActiveRecord::Base
   #
   def chain_uncover!
     Field::Analyzer.new(field).uncover_strategy_from(self).tap do |locations|
+      locations.each { |loc| loc.state= 'uncovered' }
       field.locations.
           where(id: locations.map(&:id)).
           update_all(state: :uncovered, updated_at: Time.now)
