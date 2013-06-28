@@ -19,6 +19,8 @@ class Location < ActiveRecord::Base
 
   scope :covered, ->{ where( state: :covered ) }
 
+  scope :updated_since, -> (time){ where('updated_at >= ?', time) }
+
   #
   # given an x,y coordinate, it fetches the first location found matching
   # the given coordinate, this scope should normally be called within

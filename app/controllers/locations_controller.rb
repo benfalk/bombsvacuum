@@ -14,9 +14,11 @@ class LocationsController < ApplicationController
 
   def subscribe
     response.headers['Content-Type'] = 'text/event-stream'
+    @field = field
     loop do
-      field.locations.where('updated_at > ?', 1.second.ago).each do |loc|
+      @field.locations_changed_since( last_update ).each do |loc|
         response.stream.write "data: #{loc.to_json}\n\n"
+        self.last_update = loc.updated_at
       end
       sleep 1
     end
@@ -28,6 +30,16 @@ class LocationsController < ApplicationController
   end
 
   private
+
+  def last_update
+    session[:field] ||= {}
+    session[:field][params[:field_id]] ||= field.updated_at + 2.seconds
+  end
+
+  def last_update=(update)
+    session[:field] ||= {}
+    session[:field][params[:field_id]] = [update,last_update].max
+  end
 
   def location_params
     params.require(:location).permit(:state)

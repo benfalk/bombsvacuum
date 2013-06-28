@@ -33,6 +33,12 @@ class Field < ActiveRecord::Base
     state == 'won' || state == 'lost'
   end
 
+  def locations_changed_since(time)
+    Location.uncached do
+      Location.where(field_id: id).where('updated_at >= ?', time).to_a
+    end
+  end
+
   private
 
   #
