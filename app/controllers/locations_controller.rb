@@ -4,12 +4,13 @@ class LocationsController < ApplicationController
 
   def update
     @location = Location.includes(:field).find(params[:id])
-    @location.update(location_params)
-    Redis.new.tap do |redis|
-      redis.publish("field:#{@location.field_id}", @location.to_json)
-      unless @location.surrounding_mines?
-        @location.chain_uncover!.each do |location|
-          redis.publish("field:#{@location.field_id}", location.to_json)
+    if @location.update(location_params)
+      Redis.new.tap do |redis|
+        redis.publish("field:#{@location.field_id}", @location.to_json)
+        unless @location.surrounding_mines?
+          @location.chain_uncover!.each do |location|
+            redis.publish("field:#{@location.field_id}", location.to_json)
+          end
         end
       end
     end

@@ -3,12 +3,12 @@
 -else
   .block
     - if block.state == 'flagged'
-      F
+      f
     - else
       - if block.has_mine?
         B
         :javascript
-          boom = true;
+          alert('kaboom')
       - else
         -if block.mines > 0
           = block.mines
