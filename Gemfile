@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 1.0.1'
 
 # Use for authorization and permissions
 gem 'devise', '3.0.0.rc'
+gem 'devise-guests'
 gem 'cancan'
 
 # Use for facebook authorization
