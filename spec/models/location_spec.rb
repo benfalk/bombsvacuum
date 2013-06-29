@@ -35,6 +35,11 @@ describe Location do
     @location.valid?.should be(false)
   end
 
+  it 'has a scope to find locations around it' do
+    @location.locations_around.should_not include(@location)
+    @location.locations_around.count.should eq(3)
+  end
+
 
 
 

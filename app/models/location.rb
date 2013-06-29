@@ -19,6 +19,12 @@ class Location < ActiveRecord::Base
 
   scope :covered, ->{ where( state: :covered ) }
 
+  scope :updated_since, -> (time){ where('updated_at >= ?', time) }
+
+  scope :flagged, ->{ where(state: :flagged) }
+
+  scope :not_flagged, ->{ where.not(state: :flagged) }
+
   #
   # given an x,y coordinate, it fetches the first location found matching
   # the given coordinate, this scope should normally be called within
@@ -39,12 +45,20 @@ class Location < ActiveRecord::Base
     self.mines = mine_count if uncovered? && mines.nil?
   end
 
+  before_validation do
+    if state == 'assert'
+      self.state= 'uncovered'
+
+    end
+  end
+
   #
   # terribly long potentially, but uncovers all surrounding locations
   # and chains along on others that have no surrounding mines
   #
   def chain_uncover!
     Field::Analyzer.new(field).uncover_strategy_from(self).tap do |locations|
+      locations.each { |loc| loc.state= 'uncovered' }
       field.locations.
           where(id: locations.map(&:id)).
           update_all(state: :uncovered, updated_at: Time.now)
@@ -81,6 +95,14 @@ class Location < ActiveRecord::Base
   def locations_within_proximity
     field.locations.where( x_coordinate: x_proximity,
                            y_coordinate: y_proximity )
+  end
+
+  #
+  # builds a scope of all locations around this instance, excluding
+  # this location instance
+  #
+  def locations_around
+    locations_within_proximity.where.not(id: id)
   end
 
   #

@@ -27,7 +27,7 @@ var marker = 'uncovered';
 // FIELDS AJAX STUFF
 function reset()
 {
-    $('.flag-button').click(function()
+    $('.field').click(function()
     {
         $.ajax({
             type: "POST",
@@ -48,7 +48,32 @@ function reset()
                 console.log( "Data Saved" );
             }
         });
+    }).contextmenu(function(e){
+        $.ajax({
+            type: "POST",
+            url: '/fields/'+$(this).data('field_id')+'/locations/'+$(this).data('id')+'.js',
+            data: {
+                _method:$(this).data('method'),
+                'action':$(this).data('action'),
+                'controller':$(this).data('controller'),
+                'location':{
+                    'state':'flagged'
+                },
+                'id':$(this).data('id'),
+                'field_id':$(this).data('field_id')
+            },
+            dataType: 'script',
+            success: function(msg)
+            {
+                console.log( "Data Saved" );
+            }
+        });
+        e.preventDefault();
+        return false;
     });
+
+
+
 }
 $(function()
 {

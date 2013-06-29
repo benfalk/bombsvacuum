@@ -4,8 +4,16 @@ class LocationsController < ApplicationController
 
   def update
     @location = Location.includes(:field).find(params[:id])
-    @location.update(location_params)
-    @location.chain_uncover! unless @location.surrounding_mines?
+    if @location.update(location_params)
+      Redis.new.tap do |redis|
+        redis.publish("field:#{@location.field_id}", @location.to_json)
+        unless @location.surrounding_mines?
+          @location.chain_uncover!.each do |location|
+            redis.publish("field:#{@location.field_id}", location.to_json)
+          end
+        end
+      end
+    end
     respond_to do |format|
       format.html { redirect_to @location.field }
       format.js
@@ -14,11 +22,14 @@ class LocationsController < ApplicationController
 
   def subscribe
     response.headers['Content-Type'] = 'text/event-stream'
-    loop do
-      field.locations.where('updated_at > ?', 1.second.ago).each do |loc|
-        response.stream.write "data: #{loc.to_json}\n\n"
+    @field = field
+
+    Redis.new(:timeout => 0).tap do |redis|
+      redis.subscribe("field:#{field.id}") do |on|
+        on.message do |_, data|
+          response.stream.write("data:#{ data }\n\n")
+        end
       end
-      sleep 1
     end
 
   rescue IOError
@@ -28,6 +39,16 @@ class LocationsController < ApplicationController
   end
 
   private
+
+  def last_update
+    session[:field] ||= {}
+    session[:field][params[:field_id]] ||= field.locations.last.updated_at
+  end
+
+  def last_update=(update)
+    session[:field] ||= {}
+    session[:field][params[:field_id]] = [update,last_update].max
+  end
 
   def location_params
     params.require(:location).permit(:state)

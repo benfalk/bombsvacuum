@@ -1,14 +1,11 @@
 -if block.covered?
   .block.field{'data-method' => :put, 'data-action' => :update, 'data-controller' => :locations, 'data-id' => block.id, 'data-field_id' => block.field_id, class:'covered', id:"block_#{block.id}"}
+-elsif block.flagged?
+  .block.field.covered f
 -else
   .block
-    - if block.state == 'flagged'
-      F
+    - if block.has_mine?
+      B
     - else
-      - if block.has_mine?
-        B
-        :javascript
-          boom = true;
-      - else
-        -if block.mines > 0
-          = block.mines
+      -if block.mines > 0
+        = block.mines

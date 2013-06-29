@@ -9,7 +9,18 @@
      source.addEventListener('message', function(e) {
        datum = JSON.parse(e.data)
        console.log( JSON.parse(e.data) );
-       $('#block_'+datum.id).replaceWith('<div class="block">'+ ( datum.mines>0 ? datum.mines : '' )+'</div>' )
+       if( datum.state == 'uncovered' ){
+        var info = datum.has_mine ? 'B' : datum.mines > 0 ? datum.mines : ''
+        $('#block_'+datum.id).replaceWith('<div class="block">'+ info +'</div>' )
+       }
+       else if( datum.state == 'flagged' )
+       {
+        $('#block_'+datum.id).html('f')
+       }
+       else if( datum.state == 'covered' )
+       {
+        $('#block_'+datum.id).replaceWith('<div class="block field covered" id="block_'+datum.id+'" class="block"></div>')
+       }
      }, false);
 
      source.addEventListener('open', function(e) {
