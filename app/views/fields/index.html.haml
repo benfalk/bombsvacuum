@@ -3,9 +3,12 @@
     .inner-board
       .message
         = link_to 'Start Game', new_field_path
-      .small-message
-        = link_to 'Sign in to challenge you friends!', new_user_session_path, class:'small-message'
-
+      - if current_or_guest_user.guest
+        .small-message
+          = link_to 'Sign in to challenge you friends!', new_user_session_path
+      - else
+        .small-message
+          = link_to 'Challenge you friends!', '#', 'data-reveal-id' => 'challenge'
   .history
     -@fields.each do |field|
       .row.match
