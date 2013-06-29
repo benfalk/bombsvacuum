@@ -21,16 +21,18 @@
 
   = stylesheet_link_tag "application"
   = javascript_include_tag "vendor/custom.modernizr"
+  = javascript_include_tag "application"
   = csrf_meta_tag
 
 %body
 
   .centerWrap
+    .note.notice= notice
+    .note.alert= alert
     .title
       bombvacuum
 
-    %span.notice= notice
-    %span.alert= alert
+
 
     = yield
 
@@ -44,7 +46,3 @@
       = link_to 'Sign In', new_user_session_path
       or
       = link_to 'Sign up', new_user_registration_path
-
-  = javascript_include_tag "application"
-
-

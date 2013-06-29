@@ -1,54 +1,22 @@
 .outer-board
   .wood-board
     .inner-board
-      %ul
-        -@fields.each do |field|
-          %li= link_to "#{field.size} | #{field.state}", field
+      .message
+        = link_to 'Start Game', new_field_path
+      .small-message
+        = link_to 'Sign in to challenge you friends!', new_user_session_path, class:'small-message'
 
-  .bench
-    .row
-      .small-3.columns.text-left-align
-        .little-square
-          .inner
-            %i.icon-time
-        .little-square.flag-button
-          .inner
-            %i.icon-flag-alt.flag
-      .small-6.columns.text-center-align
-        .score-wrap
-          12
-          .vr vs
-          21
-      .small-3.columns.text-right-align
-        .little-square
-          .inner
-            %i.icon-group
   .history
-    .row.match
-      .small-4.columns.text-left-align
-        .profile-pic
-        Bradley Potterbaum
-      .small-4.columns.text-center-align
-        .score-wrap
-          12
-          .vr vs
-          21
-      .small-4.columns.text-right-align
-        .profile-pic
-        Bradley Potterbaum
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    -@fields.each do |field|
+      .row.match
+        .small-4.columns.text-left-align
+          = image_tag "http://graph.facebook.com/#{current_user.uid}/picture", alt:'', class:'profile-pic'
+          = current_user.name
+        .small-4.columns.text-center-align
+          .score-wrap
+            0
+            .vr vs
+            0
+        .small-4.columns.text-right-align
+          .profile-pic
+          User 2
