@@ -1,67 +1,59 @@
-.reg-wrap
-{
+.reg-wrap {
   font-family: 'Pacifico', cursive;
   margin: 50px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   background-color: #8e4645;
-  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,.4);
-  -moz-box-shadow: 0 1px 5px rgba(0,0,0,.4);
-  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
   padding: 20px;
   text-align: center;
-  h2
-  {
+  h2 {
     font-family: 'Pacifico', cursive;
-	font-size: 72px;
-	color: #f4af6d;
+    font-size: 72px;
+    color: #f4af6d;
     font-weight: 400;
     padding: 0;
     margin: 0 0 40px 0;
   }
-  .email-field
-  {
+  .email-field {
     -webkit-border-radius: 5px 5px 0px 0px;
     border-radius: 5px 5px 0px 0px;
     border-bottom: 3px dotted #8e4645;
   }
-  .password-field
-  {
+  .password-field {
     -webkit-border-radius: 0px 0px 5px 5px;
     border-radius: 0px 0px 5px 5px;
   }
-  .submit-button
-  {
+  .submit-button {
     margin-top: 20px;
     font-family: 'Pacifico', cursive;
     display: inline-block;
     float: right;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	background: #f3ae6c;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #f3ae6c;
     padding: 0.5em 2em;
     font-size: 1.5em;
-	color: #db6355;
+    color: #db6355;
     border: none;
 
   }
-  .links
-  {
+  .links {
     font-family: helvetica;
     margin-top: 20px;
     text-align: left;
     line-height: 1.4em;
     font-size: .8em;
     color: #f4af6d;
-    label
-    {
+    label {
       color: #f4af6d;
     }
   }
 }
-
 
 input[type="text"],
 input[type="password"],
@@ -93,38 +85,24 @@ textarea {
   box-sizing: border-box;
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
-  transition: all 0.15s linear; }
+  transition: all 0.15s linear;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-.intro-text
-{
+.intro-text {
   margin: 0px 60px 20px;
   text-align: left;
   font-family: "Helvetica Neue";
   font-size: 20px;
   color: #556271;
-  .underline
-  {
+  .underline {
     text-decoration: underline;
   }
-  .highlight
-  {
+  .highlight {
     color: #46cdc4;
   }
 }
-.outro-text
-{
+
+.outro-text {
   margin: 0px 60px 50px;
   font-family: 'Lobster', cursive;
   font-size: 30px;
@@ -132,10 +110,7 @@ textarea {
 
 }
 
-
-
-a.sign-in
-{
+a.sign-in {
   display: inline-block;
   font-family: "Lobster 1.3";
   font-size: 3.2em;
@@ -145,36 +120,35 @@ a.sign-in
   -moz-border-radius: 8px;
   border-radius: 8px;
   background-color: #db6456;
-  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.28);
-  -moz-box-shadow: 0 2px 3px rgba(0,0,0,.28);
-  box-shadow: 0 2px 3px rgba(0,0,0,.28);
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .28);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, .28);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .28);
   background-image: -webkit-linear-gradient(left, #ebe7e4, #fff 49%, #ebe7e4);
   background-image: -moz-linear-gradient(left, #ebe7e4, #fff 49%, #ebe7e4);
   background-image: -o-linear-gradient(left, #ebe7e4, #fff 49%, #ebe7e4);
   background-image: -ms-linear-gradient(left, #ebe7e4, #fff 49%, #ebe7e4);
   background-image: linear-gradient(to right, #ebe7e4, #fff 49%, #ebe7e4);
-  i{
+  i {
     display: inline-block;
     color: #3b5998;
     font-size: 1.5em;
     margin-top: 10px;
   }
 }
-a.sign-in:hover
-{
+
+a.sign-in:hover {
   color: #ed5e5c;
-  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.50);
-  -moz-box-shadow: 0 2px 3px rgba(0,0,0,.50);
-  box-shadow: 0 2px 3px rgba(0,0,0,.50);
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .50);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, .50);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .50);
 }
-.reassurance
-{
+
+.reassurance {
   margin-top: 9px;
   font-family: "Helvetica Neue";
   font-size: 12px;
   color: #aeafb7;
-  a
-  {
+  a {
     color: #aeafb7;
     text-decoration: underline;
   }

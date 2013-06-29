@@ -1,6 +1,5 @@
 :javascript
-  // Not sure why, but jquery isn't ready yet?
-  setTimeout(function(){$(function(){
+  $(function(){
    console.log('starting SSE')
    if(!!window.EventSource) {
 
@@ -36,52 +35,30 @@
    }else{
      console.log('SSE not available')
    }
-  })},2000)
-
-
-
-
+  })
 
 
 .outer-board
   .wood-board
     .inner-board
       #grid.grid
-        - @blocks = @field.locations
-        = render :partial => 'block', :collection => @blocks, :as => :block
+        = render :partial => 'block', :collection => @field.locations, :as => :block
   .bench
     .row
       .small-3.columns.text-left-align
-        .little-square
+        .little-square{'data-reveal-id' => 'challenge', 'data-tooltip'=>'', title:'01:22', class:'tip-bottom' }
           .inner
             %i.icon-time
-        .little-square
+        #flag-button.little-square{'data-reveal-id' => 'challenge', 'data-tooltip'=>'', title:'Toggle Flag', class:'tip-bottom' }
           .inner
             %i.icon-flag-alt.flag
       .small-6.columns.text-center-align
         .score-wrap
-          12
+          0
           .vr vs
-          21
+          0
       .small-3.columns.text-right-align
-        .little-square
+        .little-square{'data-reveal-id' => 'challenge', 'data-tooltip'=>'', title:'Challenge Friends', class:'tip-bottom' }
           .inner
             %i.icon-group
-  .history
-    .row.match
-      .small-4.columns.text-left-align
-        .profile-pic
-        Bradley Potterbaum
-      .small-4.columns.text-center-align
-        .score-wrap
-          12
-          .vr vs
-          21
-      .small-4.columns.text-right-align
-        .profile-pic
-        Bradley Potterbaum
 
-
-
-
--#= link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
