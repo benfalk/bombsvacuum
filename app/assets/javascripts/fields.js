@@ -27,7 +27,7 @@ var marker = 'uncovered';
 // FIELDS AJAX STUFF
 function reset()
 {
-    $('.field').click(function()
+    $('.flag-button').click(function()
     {
         $.ajax({
             type: "POST",

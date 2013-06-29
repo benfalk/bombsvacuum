@@ -1,5 +1,7 @@
 class FieldsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   # GET /fields
   def index
     @fields = Field.all
@@ -12,7 +14,7 @@ class FieldsController < ApplicationController
 
   # GET /fields/new
   def new
-    @field = Field.new height: 30, width: 30, mines: 150
+    @field = Field.new height: 30, width: 31, mines: 150
     redirect_to @field if @field.save
   end
 

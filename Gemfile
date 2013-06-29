@@ -20,6 +20,9 @@ gem 'haml-rails', '0.3.5'
 
 # Use for layout
 gem 'zurb-foundation', '~> 4.0.0'
+gem 'simple_form'
+gem 'chosen-rails'
+gem 'font-awesome-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -43,6 +46,8 @@ gem 'omniauth-facebook'
 
 # Used to handle pub/sub messages
 gem 'redis'
+
+gem 'activerecord-session_store'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -61,7 +61,7 @@ class Field::Analyzer
     end
 
     possible_coordinates.select do |coordinate|
-      coordinate[0] > -1 && coordinate[0] < @field.width && coordinate[1] > -1 && coordinate[1] < @field.height
+      coordinate[0] > -1 && coordinate[0] < @field.height && coordinate[1] > -1 && coordinate[1] < @field.width
     end
 
   end

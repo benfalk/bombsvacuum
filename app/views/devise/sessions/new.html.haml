@@ -1,21 +1,42 @@
-.reg-wrap
-  .row
-    .large-12.columns
-      %h2 Sign in
-    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-      = devise_error_messages!
-      .row
-        .large-12.columns
-          = f.email_field :email, :autofocus => true, placeholder:'Email', class:'email-field'
-          = f.password_field :password, placeholder:'Password', class:'password-field'
-      .row
-        .large-6.columns
-          .links
-            - if devise_mapping.rememberable?
-              %div
-                %label
-                  = f.check_box :remember_me, style:'width: 11px; height: 14px;}'
-                  Please remember my email.
-            = render 'devise/shared/links'
-        .large-6.columns
-          = f.submit 'Sign In', class:'submit-button'
+%p.intro-text
+  Welcome to bombvacuum a multilayer mine sweeper variant. You can start playing a signal player game now
+  or if you sign in that's where the
+  %sapn.highlight
+    real magic happens with multilayer games.
+
+%p.outro-text
+  See you on the fields! -team
+
+= link_to '/users/auth/facebook', class:'sign-in' do
+  %i.icon-facebook-sign
+  Sign in and start playing
+
+.reassurance
+  Dont worry we wont post anything without your permission. We hate that too. You can always
+  = link_to 'sign in with email.', '#', 'data-reveal-id' => 'reg'
+
+
+#reg.reveal-modal
+  .reg-wrap
+    .row
+      .large-12.columns
+        %h2 Sign in
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        = devise_error_messages!
+        .row
+          .large-12.columns
+            = f.email_field :email, :autofocus => true, placeholder:'Email', class:'email-field'
+            = f.password_field :password, placeholder:'Password', class:'password-field'
+        .row
+          .large-6.columns
+            .links
+              - if devise_mapping.rememberable?
+                %div
+                  %label
+                    = f.check_box :remember_me, style:'width: 11px; height: 14px;}'
+                    Please remember my email.
+              = render 'devise/shared/links'
+          .large-6.columns
+            = f.submit 'Sign In', class:'submit-button'
+
+  %a.close-reveal-modal ×
