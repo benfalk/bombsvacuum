@@ -28,29 +28,49 @@
   })},2000)
 
 
-.board
-  .wood
-    .play_area
+
+
+
+
+.outer-board
+  .wood-board
+    .inner-board
       #grid.grid
         - @blocks = @field.locations
         = render :partial => 'block', :collection => @blocks, :as => :block
-.tools
-  #game-timer.time
-    00: 00
-  #flag.flag
+  .bench
+    .row
+      .small-3.columns.text-left-align
+        .little-square
+          .inner
+            %i.icon-time
+        .little-square
+          .inner
+            %i.icon-flag-alt.flag
+      .small-6.columns.text-center-align
+        .score-wrap
+          12
+          .vr vs
+          21
+      .small-3.columns.text-right-align
+        .little-square
+          .inner
+            %i.icon-group
+  .history
+    .row.match
+      .small-4.columns.text-left-align
+        .profile-pic
+        Bradley Potterbaum
+      .small-4.columns.text-center-align
+        .score-wrap
+          12
+          .vr vs
+          21
+      .small-4.columns.text-right-align
+        .profile-pic
+        Bradley Potterbaum
 
-.score-board
-  .header
-    .name
-      Name
-    .time
-      Best Time
-    .wins
-      Wins
-    .plays
-      Plays
-  .people
-    - @fakepeople = %w(Brad Ben Mike)
-    = render :partial => 'fields/person', :collection => @fakepeople, :as => :person
 
-= link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'
+
+
+-#= link_to 'challenge a friend?', '#', 'data-reveal-id' => 'challenge', class:'challenge'

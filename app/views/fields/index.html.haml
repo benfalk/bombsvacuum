@@ -1,47 +1,54 @@
-.empty-board{style:'color: #696454;'}
+.outer-board
+  .wood-board
+    .inner-board
+      %ul
+        -@fields.each do |field|
+          %li= link_to "#{field.size} | #{field.state}", field
 
-  %ul
-    -@fields.each do |field|
-      %li= link_to "#{field.size} | #{field.state}", field
+  .bench
+    .row
+      .small-3.columns.text-left-align
+        .little-square
+          .inner
+            %i.icon-time
+        .little-square.flag-button
+          .inner
+            %i.icon-flag-alt.flag
+      .small-6.columns.text-center-align
+        .score-wrap
+          12
+          .vr vs
+          21
+      .small-3.columns.text-right-align
+        .little-square
+          .inner
+            %i.icon-group
+  .history
+    .row.match
+      .small-4.columns.text-left-align
+        .profile-pic
+        Bradley Potterbaum
+      .small-4.columns.text-center-align
+        .score-wrap
+          12
+          .vr vs
+          21
+      .small-4.columns.text-right-align
+        .profile-pic
+        Bradley Potterbaum
 
-  =link_to 'Create', new_field_path
 
-  - if user_signed_in?
-    = link_to 'Sign Out', destroy_user_session_path, method: :delete
-    %h2 Bam signed in!
 
-  #facebookFriends
-  #fb-root
 
-:javascript
-  window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '153133848208607',                    // App ID from the app dashboard
-      status     : true,                                 // Check Facebook Login status
-      xfbml      : true                                  // Look for social plugins on the page
-    });
 
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-          FB.api('/me/friends', function(response){
-            if (response && response.data){
-              $.each(response.data, function() {
-                $('#facebookFriends').append('<div data-tooltip class="facebook-square tip-left" style="background: url(\'http://graph.facebook.com/'+this.id+'/picture?type=square\')" title="'+this.name+'"></div>');
-              });
-            } else {
-              console.log('Something goes wrong', response);
-            }
-          });
-        }
-      });
-  };
 
-  // Load the SDK asynchronously
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+
+
+
+
+

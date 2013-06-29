@@ -1,5 +1,7 @@
 class FieldsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   # GET /fields
   def index
     @fields = Field.all

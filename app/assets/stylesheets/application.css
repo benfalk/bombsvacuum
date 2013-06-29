@@ -10,20 +10,22 @@
  *
  *= require foundation_and_overrides
  *= require_self
+ *= require chosen
  *= require_tree .
  */
 
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import 'font-awesome';
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
-body
-{
+
+body {
   text-align: center;
-  background-color: #292823;
+  background-color: #f0edeb;
 }
 
 .centerWrap
 {
-  width: 760px;
+  width: 900px;
   margin: 30px auto;
   text-align: center;
   position: relative;
@@ -31,15 +33,21 @@ body
 
 .title
 {
-  padding: 0px 0px 30px 0px;
+    padding: 0px 0px 40px 0px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-size: 10.7em;
+    color: #46cdc4;
+    text-shadow: 0 2px 3px rgba(0,0,0,.42);
 }
 
 footer
 {
-    font-family: helvetica;
+   position: fixed;
+    bottom: 20px;
+    width: 100%;
     font-size: 12px;
     text-align: center;
-    padding: 50px 0px 0px 0px;
     color: #696454;
 }
 
@@ -66,7 +74,7 @@ footer
 	-webkit-box-shadow: 0 0 0 8px rgba(0,0,0,.2);
 	-moz-box-shadow: 0 0 0 8px rgba(0,0,0,.2);
 	box-shadow: 0 0 0 8px rgba(0,0,0,.2);
-    font-family: 'Pacifico', cursive;
+    font-family: 'Lobster', cursive;
     color: #85523c;
     padding: 10px;
     font-size: 24px;
