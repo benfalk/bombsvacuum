@@ -21,6 +21,10 @@ class Location < ActiveRecord::Base
 
   scope :updated_since, -> (time){ where('updated_at >= ?', time) }
 
+  scope :flagged, ->{ where(state: :flagged) }
+
+  scope :not_flagged, ->{ where.not(state: :flagged) }
+
   #
   # given an x,y coordinate, it fetches the first location found matching
   # the given coordinate, this scope should normally be called within
@@ -39,6 +43,13 @@ class Location < ActiveRecord::Base
 
   before_save do
     self.mines = mine_count if uncovered? && mines.nil?
+  end
+
+  before_validation do
+    if state == 'assert'
+      self.state= 'uncovered'
+
+    end
   end
 
   #
@@ -84,6 +95,14 @@ class Location < ActiveRecord::Base
   def locations_within_proximity
     field.locations.where( x_coordinate: x_proximity,
                            y_coordinate: y_proximity )
+  end
+
+  #
+  # builds a scope of all locations around this instance, excluding
+  # this location instance
+  #
+  def locations_around
+    locations_within_proximity.where.not(id: id)
   end
 
   #
