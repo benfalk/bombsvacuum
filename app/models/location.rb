@@ -47,13 +47,6 @@ class Location < ActiveRecord::Base
     self.mines = mine_count if uncovered? && mines.nil?
   end
 
-  before_validation do
-    if state == 'assert'
-      self.state= 'uncovered'
-
-    end
-  end
-
   #
   # terribly long potentially, but uncovers all surrounding locations
   # and chains along on others that have no surrounding mines
