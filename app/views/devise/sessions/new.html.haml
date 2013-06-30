@@ -20,6 +20,8 @@
   .reg-wrap
     .row
       .large-12.columns
+        .note.notice= notice
+        .note.alert= alert
         %h2 Sign in
       = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         = devise_error_messages!

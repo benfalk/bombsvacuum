@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -21,7 +22,7 @@ gem 'haml-rails', '0.3.5'
 # Use for layout
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'simple_form'
-gem 'chosen-rails'
+gem 'select2-rails'
 gem 'font-awesome-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

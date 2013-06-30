@@ -10,7 +10,7 @@
  *
  *= require foundation_and_overrides
  *= require_self
- *= require chosen
+*= require select2
  *= require_tree .
  */
 
@@ -23,7 +23,7 @@ body {
 }
 
 .centerWrap {
-  width: 900px;
+  width: 933px;
   margin: 30px auto;
   text-align: center;
   position: relative;
@@ -102,7 +102,7 @@ footer {
 
 .message {
   text-align: center;
-  padding-top: 200px;
+  padding-top: 150px;
   a {
     font-family: 'Lobster', cursive;
     font-size: 120px;
@@ -115,7 +115,7 @@ footer {
 
 .small-message {
   text-align: center;
-  padding-top: 15px;
+  padding-top: 50px;
   a {
     font-family: Futura;
     font-size: 20px;

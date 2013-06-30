@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require chosen-jquery
+//= require select2
 //= require_tree .
 
 $(document).foundation();

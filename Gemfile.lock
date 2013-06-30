@@ -34,10 +34,6 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
     cancan (1.6.10)
-    chosen-rails (0.9.15)
-      coffee-rails (>= 3.2)
-      railties (>= 3.0)
-      sass-rails (>= 3.2)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -91,6 +87,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.7)
     multipart-post (1.2.0)
+    mysql2 (0.3.11)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -147,6 +144,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    select2-rails (3.4.3)
+      sass-rails
+      thor (~> 0.14)
     simple_form (1.4.1)
     sprockets (2.10.0)
       hike (~> 1.2)
@@ -186,7 +186,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord-session_store
   cancan
-  chosen-rails
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
   devise-guests
@@ -195,6 +194,7 @@ DEPENDENCIES
   haml-rails (= 0.3.5)
   jbuilder (~> 1.0.1)
   jquery-rails
+  mysql2
   omniauth
   omniauth-facebook
   rails (= 4.0.0)
@@ -202,6 +202,7 @@ DEPENDENCIES
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   sdoc
+  select2-rails
   simple_form
   sqlite3
   turbolinks

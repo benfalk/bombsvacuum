@@ -9,8 +9,14 @@
       - else
         .small-message
           = link_to 'Challenge you friends!', '#', 'data-reveal-id' => 'challenge'
+
+          %br
+          %br
+          #top_friends
+
   .history
     -@fields.each do |field|
+      = field.inspect
       .row.match
         .small-4.columns.text-left-align
           = image_tag "http://graph.facebook.com/#{current_user.uid}/picture", alt:'', class:'profile-pic'
