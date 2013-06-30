@@ -58,7 +58,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.0'
-
+  gem 'simplecov'
   # Use unicorn as the app server
   gem 'unicorn'
 end
