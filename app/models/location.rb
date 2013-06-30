@@ -7,6 +7,8 @@ class Location < ActiveRecord::Base
 
   belongs_to :field
 
+  belongs_to :user
+
   validates_presence_of :field
 
   validates :state, :inclusion => { in: %w( covered uncovered flagged ) }
@@ -58,10 +60,17 @@ class Location < ActiveRecord::Base
   #
   def chain_uncover!
     Field::Analyzer.new(field).uncover_strategy_from(self).tap do |locations|
-      locations.each { |loc| loc.state= 'uncovered' }
+
+      locations.each do |loc|
+        loc.state= 'uncovered'
+        loc.user_id = user_id
+      end
+
       field.locations.
           where(id: locations.map(&:id)).
-          update_all(state: :uncovered, updated_at: Time.now)
+          update_all( user_id: user_id,
+                      state: :uncovered,
+                      updated_at: Time.now )
     end
   end
 

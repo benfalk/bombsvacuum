@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   include ActionController::Live
 
   def update
@@ -51,7 +53,8 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:state)
+    params[:location][:user_id] = current_user.id
+    params.require(:location).permit(:state,:user_id)
   end
 
   def field
