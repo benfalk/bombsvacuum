@@ -32,9 +32,8 @@ window.fbAsyncInit = ->
 ) document, "script", "facebook-jssdk"
 
 
-
+# DROPDOWN OF FACEBOOK FRIENDS
 friends_select = (list) ->
-
   $.each list, ->
     $("<option />",
       value: @uid
@@ -42,12 +41,7 @@ friends_select = (list) ->
     ).appendTo $("#friends_select")
 
   $("#friends_select").select2({placeholder: "Start typing a friends name"})
-
+# LIST WITH IMAGES OF 10 FRIENDS
 top_friends = (list) ->
   $.each list, ->
     $("#top_friends").append "<div data-tooltip class=\"facebook-square tip-left\" style=\"background: url(" + @pic_square + ")\" title=\"" + @name + "\"></div>"
-
-
-playing_now = (list) ->
-  $.each list, ->
-    $("#playing_now").append "<div data-tooltip class=\"facebook-square tip-left\" style=\"background: url(" + @pic_square + ")\" title=\"" + @name + "\"></div>"
