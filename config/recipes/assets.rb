@@ -16,14 +16,12 @@ namespace :deploy do
         set :asset_env, "RAILS_GROUPS=assets"
         set :assets_dependencies, fetch(:assets_dependencies) + %w(config/locales/js)
     DESC
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} #{assets_dependencies.join ' '} | wc -l").to_i > 0 
-        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} assets:precompile}
-      else
-        logger.info "Skipping asset pre-compilation because there were no asset changes"
-      end 
-    end 
+    task :precompile, :roles => assets_role, :except => { :no_release => true } do
+      run <<-CMD.compact
+        cd -- #{latest_release.shellescape} &&
+        #{rake} RAILS_ENV=#{rails_env.to_s.shellescape} #{asset_env} assets:precompile
+      CMD
+    end
 
   end 
 end
