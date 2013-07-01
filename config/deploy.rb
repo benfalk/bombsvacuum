@@ -1,6 +1,7 @@
 # Automatic Bundling
 require 'bundler/capistrano'
 load 'config/recipes/puma'
+load 'config/recipes/assets'
 
 #=====================
 #       Config       =
