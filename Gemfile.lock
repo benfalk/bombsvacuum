@@ -34,16 +34,12 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
     cancan (1.6.10)
-    capistrano (2.14.1)
+    capistrano (2.15.4)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    chosen-rails (0.9.15)
-      coffee-rails (>= 3.2)
-      railties (>= 3.0)
-      sass-rails (>= 3.2)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -78,7 +74,7 @@ GEM
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
     hashie (2.0.5)
-    highline (1.6.15)
+    highline (1.6.19)
     hike (1.2.3)
     httpauth (0.2.0)
     i18n (0.6.4)
@@ -98,13 +94,14 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.7)
     multipart-post (1.2.0)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-sftp (2.0.5)
-      net-ssh (>= 2.0.9)
-    net-ssh (2.6.3)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
+    mysql2 (0.3.11)
+    net-scp (1.1.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.7)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -163,6 +160,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    select2-rails (3.4.3)
+      sass-rails
+      thor (~> 0.14)
     simple_form (1.4.1)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -207,7 +207,6 @@ DEPENDENCIES
   activerecord-session_store
   cancan
   capistrano
-  chosen-rails
   coffee-rails (~> 4.0.0)
   devise (= 3.0.0.rc)
   devise-guests
@@ -216,6 +215,7 @@ DEPENDENCIES
   haml-rails (= 0.3.5)
   jbuilder (~> 1.0.1)
   jquery-rails
+  mysql2
   omniauth
   omniauth-facebook
   puma (~> 2.0.1)
@@ -224,6 +224,7 @@ DEPENDENCIES
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   sdoc
+  select2-rails
   simple_form
   simplecov
   sqlite3

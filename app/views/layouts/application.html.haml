@@ -27,16 +27,11 @@
 %body
 
   .centerWrap
-    .note.notice= notice
-    .note.alert= alert
+
     .title
       bombvacuum
 
-
-
     = yield
-
-  = render 'layouts/fb'
 
   %footer
     This is a footer and this is where you put all the footer stuff.
@@ -46,3 +41,7 @@
       = link_to 'Sign In', new_user_session_path
       or
       = link_to 'Sign up', new_user_registration_path
+  #fb-root
+  = render 'layouts/fb'
+
+
