@@ -4,6 +4,7 @@ class FieldSubscriptionsController < ApplicationController
 
   def show
     response.headers['Content-Type'] = 'text/event-stream'
+    response.headers['X-Accel-Buffering'] = 'no'
     @field = field
 
     Redis.new(:timeout => 0).tap do |redis|
