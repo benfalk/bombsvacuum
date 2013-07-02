@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+# We use Puma in production
+gem 'puma', '~> 2.0.1'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'mysql2'
@@ -59,7 +62,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.0'
-
+  gem 'simplecov'
   # Use unicorn as the app server
   gem 'unicorn'
 end
@@ -68,7 +71,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
