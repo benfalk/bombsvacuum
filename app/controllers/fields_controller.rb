@@ -9,7 +9,7 @@ class FieldsController < ApplicationController
 
   # GET /fields/:id
   def show
-    @field = Field.includes(:locations).find(params[:id]).order(:id => :asc)
+    @field = Field.includes(:locations).find(params[:id])
   end
 
   # GET /fields/new
