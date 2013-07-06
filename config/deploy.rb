@@ -2,6 +2,7 @@
 require 'bundler/capistrano'
 load 'config/recipes/puma'
 load 'config/recipes/assets'
+load 'config/recipes/postgresql'
 
 #=====================
 #       Config       =

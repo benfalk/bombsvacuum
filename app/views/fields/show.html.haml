@@ -3,7 +3,7 @@
    console.log('starting SSE')
    if(!!window.EventSource) {
 
-     var source = new EventSource('#{subscribe_field_locations_path(@field)}')
+     var source = new EventSource('#{field_subscription_path(@field)}')
 
      source.addEventListener('message', function(e) {
        datum = JSON.parse(e.data)
@@ -42,7 +42,7 @@
   .wood-board
     .inner-board
       #grid.grid
-        = render :partial => 'block', :collection => @field.locations, :as => :block
+        = render :partial => 'block', :collection => @field.locations.order(:id=>:asc), :as => :block
   .bench
     .row
       .small-3.columns.text-left-align

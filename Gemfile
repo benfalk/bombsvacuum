@@ -4,11 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # We use Puma in production
-gem 'puma', '~> 2.0.1'
+gem 'puma', '~> 2.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem 'mysql2'
+#gem 'mysql2'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

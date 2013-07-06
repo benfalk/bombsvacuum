@@ -2,8 +2,6 @@ class LocationsController < ApplicationController
 
   before_filter :authenticate_user!
 
-  include ActionController::Live
-
   def update
     @location = Location.includes(:field).find(params[:id])
     if @location.update(location_params)
@@ -20,24 +18,6 @@ class LocationsController < ApplicationController
       format.html { redirect_to @location.field }
       format.js
     end
-  end
-
-  def subscribe
-    response.headers['Content-Type'] = 'text/event-stream'
-    @field = field
-
-    Redis.new(:timeout => 0).tap do |redis|
-      redis.subscribe("field:#{field.id}") do |on|
-        on.message do |_, data|
-          response.stream.write("data:#{ data }\n\n")
-        end
-      end
-    end
-
-  rescue IOError
-      # If the client cancels the connection we'll get his
-  ensure
-    response.stream.close
   end
 
   private
