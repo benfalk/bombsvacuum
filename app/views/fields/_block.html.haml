@@ -1,11 +1,11 @@
 -if block.covered?
   .block.field{'data-method' => :put, 'data-action' => :update, 'data-controller' => :locations, 'data-id' => block.id, 'data-field_id' => block.field_id, class:'covered', id:"block_#{block.id}"}
 -elsif block.flagged?
-  .block.field.covered
+  .block.field.covered{ class:"#{'opponent' unless block.user_id == current_user.id}" }
     .inner
       f
 -else
-  .block
+  .block{ class:"#{'opponent' unless block.user_id == current_user.id}" }
     - if block.has_mine?
       .inner
         B

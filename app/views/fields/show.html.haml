@@ -41,6 +41,8 @@
 .outer-board
   .wood-board
     .inner-board
+      .screen
+        #game-timer
       #grid.grid
         = render :partial => 'block', :collection => @field.locations.order(:id=>:asc), :as => :block
   .bench

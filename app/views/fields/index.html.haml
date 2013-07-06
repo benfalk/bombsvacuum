@@ -2,7 +2,7 @@
   .wood-board
     .inner-board
       .message
-        = link_to 'Start Game', new_field_path
+        = link_to 'Start Game', new_field_path, class: 'fadeIO'
       - if current_or_guest_user.guest
         .small-message
           = link_to 'Sign in to challenge you friends!', new_user_session_path

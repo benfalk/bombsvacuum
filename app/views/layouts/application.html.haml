@@ -24,7 +24,7 @@
   = javascript_include_tag "application"
   = csrf_meta_tag
 
-%body
+%body{:id=> content_for?(:body_id) ? yield(:body_id) : "#{params[:controller].parameterize.gsub('_','-')}-#{params[:action].parameterize.gsub('_','-')}"}
 
   .centerWrap
 

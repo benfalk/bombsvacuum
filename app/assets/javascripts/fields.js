@@ -15,7 +15,7 @@ setInterval(function () {
     hours = pretty_time_string(hours);
     minutes = pretty_time_string(minutes);
     seconds = pretty_time_string(seconds);
-    var currentTimeString = minutes + ": " + seconds;
+    var currentTimeString = minutes + ":" + seconds;
     $('#game-timer').text(currentTimeString);
 }, 1000);
 
@@ -84,3 +84,30 @@ $(function () {
 
     reset();
 });
+
+$('#clickme').click(function() {
+  $('#book').animate({
+    opacity: 0.25,
+    left: '+=50',
+    height: 'toggle'
+  }, 5000, function() {
+    // Animation complete.
+  });
+});
+
+// Fade In and Out
+setInterval(function ()
+{
+
+    $('.fadeIO').animate(
+    {
+    opacity: 0.50
+    }, 1500, function() {
+        $(this).animate(
+        {
+        opacity: 1.0
+        }, 1500);
+    });
+
+
+}, 3000);
