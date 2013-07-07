@@ -81,6 +81,10 @@ $(function () {
             marker = 'uncovered';
         }
     });
+    // TIMMER TOGGLE
+    $('#timmer-button').click(function () {
+        $('.screen').fadeToggle();
+    });
 
     reset();
 });
