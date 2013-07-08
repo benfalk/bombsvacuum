@@ -23,7 +23,7 @@ body#fields-show {
   .wood-board {
     margin: 24px 24px 0px 24px;
     padding: 22px;
-    background: url('wood.jpg') no-repeat;
+    background: asset-url('wood.jpg') no-repeat;
     -webkit-border-radius: 4px 3px 3px 4px/4px 4px 3px 3px;
     -moz-border-radius: 4px 3px 3px 4px/4px 4px 3px 3px;
     border-radius: 4px 3px 3px 4px/4px 4px 3px 3px;
@@ -246,7 +246,7 @@ body#fields-show {
   bottom: 0px;
   left: 0px;
   font-size: 18em;
-  color: rgba(54, 67, 82, 0.13);
+  color: rgba(54, 67, 82, 0.15);
   font-weight: 600;
   padding-top: 250px;
 }
