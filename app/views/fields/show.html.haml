@@ -3,7 +3,7 @@
    console.log('starting SSE')
    if(!!window.EventSource) {
 
-     var source = new EventSource('#{field_subscription_path(@field)}')
+     var source = new EventSource('#{field_subscription_path(@field)}');
 
      source.addEventListener('message', function(e) {
        datum = JSON.parse(e.data)
