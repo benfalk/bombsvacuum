@@ -16,7 +16,7 @@
 
   -# Set the viewport width to device width for mobile
   %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
-  %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
+  %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
   %title= content_for?(:title) ? yield(:title) : "welcome to bombvacuum"
 
   = stylesheet_link_tag "application"
@@ -27,7 +27,6 @@
 %body{:id=> content_for?(:body_id) ? yield(:body_id) : "#{params[:controller].parameterize.gsub('_','-')}-#{params[:action].parameterize.gsub('_','-')}"}
 
   .centerWrap
-
     .title
       bombvacuum
 
@@ -43,5 +42,3 @@
       = link_to 'Sign up', new_user_registration_path
   #fb-root
   = render 'layouts/fb'
-
-

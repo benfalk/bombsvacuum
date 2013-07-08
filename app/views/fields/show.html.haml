@@ -8,13 +8,15 @@
      source.addEventListener('message', function(e) {
        datum = JSON.parse(e.data)
        console.log( JSON.parse(e.data) );
+       var opponent = datum.id != "#{current_user.id}" ? 'opponent' : '';
        if( datum.state == 'uncovered' ){
         var info = datum.has_mine ? 'B' : datum.mines > 0 ? datum.mines : ''
-        $('#block_'+datum.id).replaceWith('<div class="block">'+ info +'</div>' )
+        $('#block_'+datum.id).replaceWith('<div class="block '+opponent+'">'+ info +'</div>' )
        }
        else if( datum.state == 'flagged' )
        {
         $('#block_'+datum.id).html('f')
+        $('#block_'+datum.id).addClass(opponent);
        }
        else if( datum.state == 'covered' )
        {
