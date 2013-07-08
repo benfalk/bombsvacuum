@@ -1,22 +1,13 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: true
-  database: bomb_development
-  pool: 5
-  username: root
-  password: 'password'
-  socket: /tmp/mysql.sock
+  adapter: sqlite3 
+  database: db/bomb_development.sqlite3
+  pool: 32
+  timeout: 5000
 
-test: &test
-  adapter: mysql2
-  encoding: utf8
-  reconnect: true
-  database: bomb_test
-  pool: 5
-  username: root
-  password: 'password'
-  socket: /tmp/mysql.sock
+test:
+  adapter: sqlite3 
+  database: db/bomb_test.sqlite3
+  pool: 32
   timeout: 5000
 
 production:

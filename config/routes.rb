@@ -6,7 +6,7 @@ BombsVacuum::Application.routes.draw do
     resources :locations, :only => [:patch,:update,:show]
   end
 
-  resources :field_subscriptions, :only =>[:show]
+  # resources :field_subscriptions, :only =>[:show]
 
   # You can have the root of your site routed with "root"
   root 'fields#index'

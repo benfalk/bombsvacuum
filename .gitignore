@@ -15,5 +15,8 @@
 /log/*.log
 /tmp
 
+# Ignore all node_module libs
+/streamer/node_modules/
+
 /.idea/
 /coverage/
